@@ -11,10 +11,23 @@
 
             <form #loginForm="ngForm" (ngSubmit)="login()">
 
-                <input type="text" name="nome" [(ngModel)]="usuario.nome" placeholder=" Insira seu e-mail">
+                <div id="input-emaildiv">
+                    <!-- Exemplo para o campo de e-mail -->
+                    <div class="input-container">
+                        <img src="icons/IconeUsuarioLogin.png" alt="Ícone de Usuário" class="input-icon">
+                        <input type="text" name="nome" [(ngModel)]="usuario.nome" placeholder=" Insira seu e-mail">
+                    </div>
+                    <a href=""><img id="IconeInformacaoLogin" src="icons/IconeInformacaoLogin.png"
+                            alt="IconeInformacaoLogin"></a>
 
+                </div>
 
-                <input type="text" name="senha" [(ngModel)]="usuario.senha" placeholder=" Insira sua senha">
+                <!-- Exemplo para o campo de senha -->
+                <div class="input-container">
+                    <img src="icons/IconeCadeadoLogin.png" alt="Ícone de Senha" class="input-icon">
+                    <input type="password" name="senha" [(ngModel)]="usuario.senha" placeholder=" Insira sua senha">
+                </div>
+
                 <div class="remember-me-container">
                     <label for="rememberMe">Logar automaticamente</label>
                     <input id="rememberMe" type="checkbox">
