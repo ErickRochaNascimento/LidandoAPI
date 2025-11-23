@@ -9,6 +9,12 @@
         <div class="form-area">
             <h2>Boas-vindas</h2>
 
+            @if (mensagemErro) {
+            <div class="alert-error">
+                <p>{{ mensagemErro }}</p>
+            </div>
+            }
+
             <form #loginForm="ngForm" (ngSubmit)="login()">
 
                 <div id="input-emaildiv">

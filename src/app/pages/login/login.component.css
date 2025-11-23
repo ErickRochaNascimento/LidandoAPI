@@ -195,3 +195,20 @@ input {
     align-items: center;
     
 }
+
+.alert-error {
+    width: 70%; /* Mesma largura do formulário */
+    background-color: #ffe6e6;
+    border: 1px solid #ff3333;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.alert-error p {
+    margin: 0;
+}
