@@ -60,7 +60,7 @@ body {
 /* ----------- Título ----------- */
 .auth-conteiner h2 {
     font-size: 24px;
-    color: #0b8736;
+    color: #003057;
     margin-bottom: 20px;
 }
 
@@ -110,7 +110,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #9c9c9c;
+    background: #003057;
 }
 
 
@@ -213,3 +213,5 @@ input {
 .alert-error p {
     margin: 0;
 }
+
+
