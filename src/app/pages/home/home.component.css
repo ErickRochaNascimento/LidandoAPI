@@ -77,11 +77,11 @@
   height: 400px; /* Ajuste conforme necessário */
   
   /* Bordas e sombras para ficar bonito */
-  border-radius: 8px;
+  border-radius: 10px;
+  border: solid 2px #666;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   
   /* Espaçamento interno */
-  padding: 20px;
   
   /* Layout interno do cartão */
   display: flex;
@@ -90,14 +90,19 @@
 
 .card-header {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+  padding: 10px 10px;
   margin-bottom: 20px;
   color: #666;
+  background-color: #66666633;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #504e4e;
 }
 
 .card-body h1 {
   color: #007bff; /* Azul parecido com o da imagem */
   font-weight: bold;
+  font-size: 3vh;
+  padding-left: 10px;
 }
 
 
