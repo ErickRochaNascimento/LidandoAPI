@@ -1,5 +1,3 @@
-
-
 /* ===========================
    Estilos Globais do Componente
    =========================== */
@@ -108,7 +106,7 @@ h3 {
 /* ===========================
    Seção 1: Container da Imagem do Veículo
    =========================== */
-.container{
+.container {
     padding-top: 10vh;
     padding-bottom: 10vh;
 }
@@ -195,19 +193,19 @@ h3 {
     margin-bottom: 5px;
 }
 
-tbody th{
+tbody th {
     color: #444242;
     background-color: #ffffff;
     align-items: center;
     align-content: center;
 }
 
-thead th{
+thead th {
     color: #f1f1f1;
     background-color: #0D3574;
 }
 
-#table-carvin{
+#table-carvin {
     border: #444242 2px;
 }
 
@@ -218,7 +216,7 @@ thead th{
     text-transform: uppercase;
 }
 
-.card-title{
+.card-title {
     color: #00d4ff;
 }
 
@@ -310,12 +308,30 @@ progress[value]::-moz-progress-bar {
    1. BREAKPOINT PARA MONITORES PEQUENOS (MAX-WIDTH: 1024PX)
    ========================================================================== */
 @media (max-width: 1024px) {
+
     /* Ajusta o layout principal dos cards */
     .d-flex.align-items-center.justify-content-evenly {
         /* Permite que os cards quebrem a linha se necessário */
         flex-wrap: wrap;
         /* Reduz o espaçamento entre os cards */
         justify-content: space-around !important;
+    }
+
+    .card-body {
+        display: flex;
+        gap: 1vh;
+        padding: 0;
+        padding-top: 2vh;
+        margin: 0;
+    }
+
+    #card-body-select {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        padding: 0;
+        padding-top: 0;
+        margin: 0;
     }
 
     .card {
@@ -325,9 +341,21 @@ progress[value]::-moz-progress-bar {
         /* Adiciona margem para espaçamento */
     }
 
+
+
+
+
+
+
+    .container {
+        padding: 0;
+        padding-top: 3vh;
+    }
+
     /* Ajusta o tamanho da imagem do veículo */
     .container img {
         width: 70% !important;
+
     }
 
     /* Ajusta a tabela para melhor visualização */
@@ -341,100 +369,160 @@ progress[value]::-moz-progress-bar {
    ========================================================================== */
 
 @media (max-width: 768px) {
-  
-  /* --- AJUSTES GERAIS DO LAYOUT --- */
-  .d-flex.align-items-center.justify-content-evenly {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .card {
-    width: 90% !important;
-    margin: 10px 0 !important;
-  }
+    /* --- AJUSTES GERAIS DO LAYOUT --- */
+    .d-flex.align-items-center.justify-content-evenly {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .container img {
-    width: 90% !important;
-  }
+    .card {
+        width: 90% !important;
+        margin: 10px 0 !important;
+    }
 
-  .container-fluid.position-absolute.bottom-0 {
-    position: static !important;
-    margin-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  #imagem-dashboard {
-    height: auto;
-    width: 100vh;
-    margin: 0;
-  }
+    p{
+        width: fit-content;
+    }
 
-  /* --- TABELA RESPONSIVA COM CORES PRESERVADAS --- */
-  
-  /* 1. Transforma a tabela em blocos */
-  #table-carvin, 
-  #table-carvin tbody, 
-  #table-carvin tr {
-    display: block;
-    width: 100%;
-    border: none; /* Remove borda duplicada do container */
-  }
+    .card-text, .card-title{
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
 
-  /* 2. Esconde o cabeçalho azul original (pois ele não cabe no vertical) */
-  #table-carvin thead {
-    display: none;
-  }
+    }
 
-  /* 3. Estiliza as células (th) para parecerem linhas de lista */
-  #table-carvin tbody th {
-    display: flex;             
-    justify-content: space-between; 
-    align-items: center;       
-    text-align: right;
-    padding: 12px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    
-    /* --- MANTENDO AS SUAS CORES --- */
-    background-color: #ffffff;  /* Fundo Branco (igual ao seu tbody th) */
-    color: #444242;             /* Texto Cinza Escuro (igual ao seu tbody th) */
-    border-bottom: 1px solid #444242; /* Borda Cinza (igual ao seu #table-carvin) */
-    border-right: 2px solid #444242;  /* Mantém a borda lateral */
-    border-left: 2px solid #444242;   /* Mantém a borda lateral */
-  }
-  
-  /* Borda superior no primeiro item para fechar a caixa */
-  #table-carvin tbody th:first-child {
-    border-top: 2px solid #444242; 
-  }
+    .card-body {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        padding-top: 2vh;
+    }
 
-  /* Remove a borda inferior do último item e fecha com a grossa */
-  #table-carvin tbody th:last-child {
-    border-bottom: 2px solid #444242; 
-  }
+    #card-body-select {
+        
+        gap: 0;
+        padding: 0;
+        padding-top: 0;
+        margin: 0;
+    }
 
-  /* 4. Ajuste do formulário */
-  #table-carvin form {
-    width: 60%; 
-  }
+    #card-total {
+        padding: 2vh;
+        padding-bottom: 1vh;
+        height: fit-content;
+    }
 
-  /* --- RÓTULOS (LABELS) --- */
-  /* Aqui usamos a cor #0D3574 (Azul do seu thead) para lembrar o cabeçalho */
+    .container {
+        padding: 2vh 0;
+    }
 
-  #table-carvin tbody th::before {
-    font-weight: bold;
-    color: #0D3574; /* <--- Cor do seu cabeçalho original */
-    text-transform: uppercase;
-    margin-right: 10px;
-    font-size: 0.9rem;
-  }
+    .container img {
+        width: 90% !important;
+        margin: 0;
+    }
 
-  #table-carvin tbody th:nth-of-type(1)::before { content: "Codigo - Vin"; }
-  #table-carvin tbody th:nth-of-type(2)::before { content: "Odômetro"; }
-  #table-carvin tbody th:nth-of-type(3)::before { content: "Nivel de Combustivel"; }
-  #table-carvin tbody th:nth-of-type(4)::before { content: "Status"; }
-  #table-carvin tbody th:nth-of-type(5)::before { content: "Lat"; }
-  #table-carvin tbody th:nth-of-type(6)::before { content: "Long"; }
+    .container-fluid.position-absolute.bottom-0 {
+        position: static !important;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #imagem-dashboard {
+        height: auto;
+        width: 100vh;
+        margin: 0;
+    }
+
+    /* --- TABELA RESPONSIVA COM CORES PRESERVADAS --- */
+
+    /* 1. Transforma a tabela em blocos */
+    #table-carvin,
+    #table-carvin tbody,
+    #table-carvin tr {
+        display: block;
+        width: 100%;
+        border: none;
+        /* Remove borda duplicada do container */
+    }
+
+    /* 2. Esconde o cabeçalho azul original (pois ele não cabe no vertical) */
+    #table-carvin thead {
+        display: none;
+    }
+
+    /* 3. Estiliza as células (th) para parecerem linhas de lista */
+    #table-carvin tbody th {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        width: 100%;
+        box-sizing: border-box;
+
+        /* --- MANTENDO AS SUAS CORES --- */
+        background-color: #ffffff;
+        /* Fundo Branco (igual ao seu tbody th) */
+        color: #444242;
+        /* Texto Cinza Escuro (igual ao seu tbody th) */
+        border-bottom: 1px solid #444242;
+        /* Borda Cinza (igual ao seu #table-carvin) */
+        border-right: 2px solid #444242;
+        /* Mantém a borda lateral */
+        border-left: 2px solid #444242;
+        /* Mantém a borda lateral */
+    }
+
+    /* Borda superior no primeiro item para fechar a caixa */
+    #table-carvin tbody th:first-child {
+        border-top: 2px solid #444242;
+    }
+
+    /* Remove a borda inferior do último item e fecha com a grossa */
+    #table-carvin tbody th:last-child {
+        border-bottom: 2px solid #444242;
+    }
+
+    /* 4. Ajuste do formulário */
+    #table-carvin form {
+        width: 60%;
+    }
+
+    /* --- RÓTULOS (LABELS) --- */
+    /* Aqui usamos a cor #0D3574 (Azul do seu thead) para lembrar o cabeçalho */
+
+    #table-carvin tbody th::before {
+        font-weight: bold;
+        color: #0D3574;
+        /* <--- Cor do seu cabeçalho original */
+        text-transform: uppercase;
+        margin-right: 10px;
+        font-size: 0.9rem;
+    }
+
+    #table-carvin tbody th:nth-of-type(1)::before {
+        content: "Codigo - Vin";
+    }
+
+    #table-carvin tbody th:nth-of-type(2)::before {
+        content: "Odômetro";
+    }
+
+    #table-carvin tbody th:nth-of-type(3)::before {
+        content: "Nivel de Combustivel";
+    }
+
+    #table-carvin tbody th:nth-of-type(4)::before {
+        content: "Status";
+    }
+
+    #table-carvin tbody th:nth-of-type(5)::before {
+        content: "Lat";
+    }
+
+    #table-carvin tbody th:nth-of-type(6)::before {
+        content: "Long";
+    }
 }
 
 /* ==========================================================================

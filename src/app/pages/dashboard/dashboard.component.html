@@ -1,9 +1,9 @@
 <app-header></app-header>
-<h2   class="text-primary text-center">Dashboard Ford</h2>
+<h2   class=" text-center">Dashboard Ford</h2>
 <div class="d-flex align-items-center justify-content-evenly">
-  <div class="card w-25 mx-1">
+  <div id="card-total" class="card w-25 mx-1">
     <div class="card-header">Veiculo</div>
-    <div class="card-body">
+    <div id="card-body-select" class="card-body">
       <form [formGroup]="selectCarForms">
         <select class="form-select my-2" name="" id="" formControlName="carId">
           @for (vehicle of vehicles; track vehicle) {
@@ -13,7 +13,7 @@
       </form>
     </div>
   </div>
-  <div class="card w-25 mx-1">
+  <div id="card-total" class="card w-25 mx-1">
     <div class="card-header">Total de Vendas</div>
     <div class="card-body">
       @if (selectedVehicle) {
@@ -21,10 +21,10 @@
       } @else {
       <h5 class="card-title">000</h5>
       }
-      <p class="card-text text-primary">Unid.</p>
+      <p class="card-text ">Unid.</p>
     </div>
   </div>
-  <div class="card w-25 mx-1">
+  <div  id="card-total" class="card w-25 mx-1">
     <div class="card-header">Veiculos Conectados</div>
     <div class="card-body">
       @if (selectedVehicle) {
@@ -32,10 +32,10 @@
       } @else {
       <h5 class="card-title">000</h5>
       }
-      <p class="card-text text-primary">Unid.</p>
+      <p class="card-text ">Unid.</p>
     </div>
   </div>
-  <div class="card w-25 mx-1">
+  <div id="card-total" class="card w-25 mx-1">
     <div class="card-header">Software Atualizado</div>
     <div class="card-body">
       @if (selectedVehicle) {
@@ -43,7 +43,7 @@
       } @else {
       <h5 class="card-title">000</h5>
       }
-      <p class="card-text text-primary">Unid.</p>
+      <p class="card-text ">Unid.</p>
     </div>
   </div>
 </div>
