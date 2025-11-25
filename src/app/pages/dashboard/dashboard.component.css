@@ -326,12 +326,13 @@ progress[value]::-moz-progress-bar {
     }
 
     #card-body-select {
-        display: flex;
-        flex-direction: row;
         gap: 0;
-        padding: 0;
         padding-top: 0;
-        margin: 0;
+        width: 100%;
+    }
+
+    #selected-Vehicle{
+        width: 306px;
     }
 
     .card {

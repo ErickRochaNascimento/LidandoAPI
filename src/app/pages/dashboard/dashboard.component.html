@@ -5,7 +5,7 @@
     <div class="card-header">Veiculo</div>
     <div id="card-body-select" class="card-body">
       <form [formGroup]="selectCarForms">
-        <select class="form-select my-2" name="" id="" formControlName="carId">
+        <select class="form-select my-2" name="" id="selected-Vehicle" formControlName="carId">
           @for (vehicle of vehicles; track vehicle) {
           <option [value]="vehicle.id">{{ vehicle.vehicle }}</option>
           }
