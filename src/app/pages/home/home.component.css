@@ -105,4 +105,9 @@
   padding-left: 10px;
 }
 
-
+@media (max-width: 768px) {
+  .main-container{
+    padding: 0 1vh;
+    background-size: 55vh auto;
+  }
+}

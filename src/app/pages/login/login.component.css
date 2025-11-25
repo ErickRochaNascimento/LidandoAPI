@@ -10,10 +10,10 @@ body {
 
 /* ----------- Coluna esquerda (imagem do carro) ----------- */
 #imagemAoLado {
-  width: 50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #imagemVeiculoLogin {
@@ -30,7 +30,8 @@ body {
     flex-direction: column;
     align-items: center;
     background: #ffffff;
-    padding-top: 20px; /* espaço para o logo */
+    padding-top: 20px;
+    /* espaço para o logo */
 }
 
 /* LOGO NO TOPO */
@@ -38,7 +39,8 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 20vh; /* espaço entre logo e formulário */
+    margin-bottom: 20vh;
+    /* espaço entre logo e formulário */
 
 }
 
@@ -145,14 +147,16 @@ button[type="submit"]:hover {
 }
 
 .remember-me-container label {
-    margin-bottom: 0; /* Remove a margem inferior padrão do label */
+    margin-bottom: 0;
+    /* Remove a margem inferior padrão do label */
     font-size: 14px;
     color: #555;
     cursor: pointer;
 }
 
 .remember-me-container input[type="checkbox"] {
-    width: auto; /* Permite que o checkbox tenha seu tamanho padrão */
+    width: auto;
+    /* Permite que o checkbox tenha seu tamanho padrão */
     margin-left: 10px;
     cursor: pointer;
 }
@@ -162,13 +166,15 @@ button[type="submit"]:hover {
     display: flex;
     align-items: center;
     width: 100%;
-    border: 2px solid #d3d3d3; /* Borda inicial cinza */
+    border: 2px solid #d3d3d3;
+    /* Borda inicial cinza */
     border-radius: 6px;
     transition: border-color 0.3s ease;
 }
 
 .input-container:focus-within {
-    border-color: #000000; /* Borda preta ao focar */
+    border-color: #000000;
+    /* Borda preta ao focar */
 }
 
 .input-icon {
@@ -182,23 +188,25 @@ button[type="submit"]:hover {
 input {
     flex-grow: 1;
     padding: 12px 10px;
-    border: none; /* Remove a borda do input, a borda fica no container */
+    border: none;
+    /* Remove a borda do input, a borda fica no container */
     outline: none;
 }
 
 
-#IconeInformacaoLogin{
+#IconeInformacaoLogin {
     width: 2vh;
 }
 
-#input-emaildiv{
+#input-emaildiv {
     display: flex;
     align-items: center;
-    
+
 }
 
 .alert-error {
-    width: 70%; /* Mesma largura do formulário */
+    width: 70%;
+    /* Mesma largura do formulário */
     background-color: #ffe6e6;
     border: 1px solid #ff3333;
     color: #cc0000;
@@ -224,6 +232,7 @@ input {
    1. BREAKPOINT PARA MONITORES PEQUENOS (MAX-WIDTH: 1024PX)
    ========================================================================== */
 @media (max-width: 1024px) {
+
     /* Ajustes na coluna da imagem e do formulário */
     body {
         /* Mantém o layout de duas colunas, mas com ajustes */
@@ -270,22 +279,32 @@ input {
    2. BREAKPOINT PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 768PX)
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* O layout de duas colunas é quebrado para uma única coluna vertical */
     body {
         flex-direction: column;
-        height: auto; /* Permite que o corpo se ajuste ao conteúdo */
+        height: auto;
+        /* Permite que o corpo se ajuste ao conteúdo */
     }
 
     #imagemAoLado {
-        /* A coluna da imagem é removida ou escondida para dispositivos móveis */
-        display: none;
+        width: 100%;
+        display: block;
+        padding-top: 5vh;
     }
+
+    #imagemVeiculoLogin {
+        width: 100%;
+        height: auto;
+    }
+
 
     .auth-conteiner {
         /* Ocupa 100% da largura */
         width: 100%;
         padding: 20px;
-        box-sizing: border-box; /* Inclui padding na largura total */
+        box-sizing: border-box;
+        /* Inclui padding na largura total */
     }
 
     .logo-top {
@@ -295,7 +314,7 @@ input {
 
     .logo-top img {
         /* Ajusta o tamanho do logo para mobile */
-        width: 12vh;
+        width: 23vh;
     }
 
     .form-area {
@@ -318,7 +337,8 @@ input {
         margin-bottom: 15px;
     }
 
-    input, button[type="submit"] {
+    input,
+    button[type="submit"] {
         padding: 10px;
         font-size: 16px;
     }
@@ -326,81 +346,5 @@ input {
     /* Ajuste para o container de "Logar automaticamente" */
     .remember-me-container {
         justify-content: center;
-    }
-}
-
-/* ==========================================================================
-   3. BREAKPOINT PARA DISPOSITIVOS MÓVEIS MUITO PEQUENOS (MAX-WIDTH: 480PX)
-   ========================================================================== */
-@media (max-width: 480px) {
-    .auth-conteiner {
-        padding: 10px;
-    }
-
-    form {
-        width: 100%; /* Ocupa toda a largura disponível */
-    }
-
-    .alert-error {
-        width: 100%;
-    }
-
-    .logo-top {
-        margin-bottom: 3vh;
-    }
-}
-
-/* ==========================================================================
-   4. CSS PARA O MENU LATERAL (header.component.css e menu.component.css)
-   ========================================================================== */
-
-/* Para o menu lateral, o comportamento de 'open' e 'collapsed' já é bom,
-   mas podemos garantir que o botão de menu (#btnMenu) fique visível
-   e o conteúdo da página (.page-content) se ajuste em telas menores. */
-
-@media (max-width: 1024px) {
-    /* Ajusta o padding do conteúdo da página para não ficar atrás do menu */
-    .page-content {
-        /* O menu tem 250px de largura quando aberto.
-           O botão de menu está em 10px. */
-        padding-left: 10px; /* Espaço inicial */
-        transition: padding-left 0.3s ease;
-    }
-
-    /* Quando o menu está aberto, empurra o conteúdo */
-    /* Isso requer uma classe no body ou no container principal que indique que o menu está aberto.
-       Como o menu é um componente Angular, essa lógica deve ser aplicada no componente pai.
-       No entanto, para fins de CSS puro, vamos focar no botão e no menu. */
-
-    /* Garante que o botão de menu seja facilmente clicável */
-    #btnMenu {
-        width: 50px; /* Aumenta o tamanho do botão */
-        height: 50px;
-        top: 15px;
-        left: 15px;
-    }
-
-    /* Garante que o menu ocupe toda a altura da tela */
-    .menu {
-        height: 100vh;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Em telas menores, o menu deve ser sempre o de largura total (250px)
-       e o botão de fechar deve ser mais proeminente. */
-
-    .menu {
-        width: 250px !important; /* Garante que o menu não fique "collapsed" em mobile */
-    }
-
-    #menu.menu-collapsed {
-        width: 250px !important;
-    }
-
-    /* O botão de fechar deve ser maior */
-    #menu-close-btn {
-        width: 30px;
-        height: 30px;
     }
 }

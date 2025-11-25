@@ -339,52 +339,102 @@ progress[value]::-moz-progress-bar {
 /* ==========================================================================
    2. BREAKPOINT PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 768PX)
    ========================================================================== */
+
 @media (max-width: 768px) {
-    /* O layout principal dos cards deve ser empilhado */
-    .d-flex.align-items-center.justify-content-evenly {
-        flex-direction: column;
-        align-items: center;
-    }
+  
+  /* --- AJUSTES GERAIS DO LAYOUT --- */
+  .d-flex.align-items-center.justify-content-evenly {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .card {
-        /* Ocupa quase toda a largura em mobile */
-        width: 90% !important;
-        margin: 10px 0 !important;
-    }
+  .card {
+    width: 90% !important;
+    margin: 10px 0 !important;
+  }
 
-    /* Ajusta o título */
-    h2.text-primary.text-center {
-        font-size: 1.5rem;
-        margin-top: 20px;
-    }
+  .container img {
+    width: 90% !important;
+  }
 
-    /* Ajusta o tamanho da imagem do veículo */
-    .container img {
-        width: 90% !important;
-    }
+  .container-fluid.position-absolute.bottom-0 {
+    position: static !important;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  #imagem-dashboard {
+    height: auto;
+    width: 100vh;
+    margin: 0;
+  }
 
-    /* Responsividade da Tabela (muito importante para mobile) */
-    #table-carvin {
-        /* Torna a tabela responsiva por rolagem horizontal */
-        display: block;
-       
-        white-space: nowrap;
-        width: 100%;
-        margin-bottom: 0;
-    }
+  /* --- TABELA RESPONSIVA COM CORES PRESERVADAS --- */
+  
+  /* 1. Transforma a tabela em blocos */
+  #table-carvin, 
+  #table-carvin tbody, 
+  #table-carvin tr {
+    display: block;
+    width: 100%;
+    border: none; /* Remove borda duplicada do container */
+  }
 
-    /* Remove o posicionamento absoluto para evitar problemas de layout */
-    .container-fluid.position-absolute.bottom-0 {
-        position: static !important;
-        margin-top: 20px;
-        padding-bottom: 20px;
-    }
+  /* 2. Esconde o cabeçalho azul original (pois ele não cabe no vertical) */
+  #table-carvin thead {
+    display: none;
+  }
 
-    /* Ajusta o padding do container principal */
-    .container-fluid {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+  /* 3. Estiliza as células (th) para parecerem linhas de lista */
+  #table-carvin tbody th {
+    display: flex;             
+    justify-content: space-between; 
+    align-items: center;       
+    text-align: right;
+    padding: 12px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    
+    /* --- MANTENDO AS SUAS CORES --- */
+    background-color: #ffffff;  /* Fundo Branco (igual ao seu tbody th) */
+    color: #444242;             /* Texto Cinza Escuro (igual ao seu tbody th) */
+    border-bottom: 1px solid #444242; /* Borda Cinza (igual ao seu #table-carvin) */
+    border-right: 2px solid #444242;  /* Mantém a borda lateral */
+    border-left: 2px solid #444242;   /* Mantém a borda lateral */
+  }
+  
+  /* Borda superior no primeiro item para fechar a caixa */
+  #table-carvin tbody th:first-child {
+    border-top: 2px solid #444242; 
+  }
+
+  /* Remove a borda inferior do último item e fecha com a grossa */
+  #table-carvin tbody th:last-child {
+    border-bottom: 2px solid #444242; 
+  }
+
+  /* 4. Ajuste do formulário */
+  #table-carvin form {
+    width: 60%; 
+  }
+
+  /* --- RÓTULOS (LABELS) --- */
+  /* Aqui usamos a cor #0D3574 (Azul do seu thead) para lembrar o cabeçalho */
+
+  #table-carvin tbody th::before {
+    font-weight: bold;
+    color: #0D3574; /* <--- Cor do seu cabeçalho original */
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+
+  #table-carvin tbody th:nth-of-type(1)::before { content: "Codigo - Vin"; }
+  #table-carvin tbody th:nth-of-type(2)::before { content: "Odômetro"; }
+  #table-carvin tbody th:nth-of-type(3)::before { content: "Nivel de Combustivel"; }
+  #table-carvin tbody th:nth-of-type(4)::before { content: "Status"; }
+  #table-carvin tbody th:nth-of-type(5)::before { content: "Lat"; }
+  #table-carvin tbody th:nth-of-type(6)::before { content: "Long"; }
 }
 
 /* ==========================================================================
